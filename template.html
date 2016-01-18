@@ -56,10 +56,11 @@
 
     <script src="file://{%support%}/bootstrap/js/jquery.min.js"></script>
     <script src="file://{%support%}/bootstrap/js/bootstrap.min.js"></script>
-    <script src="file://{%support%}/highlight.min.js"></script>
+    <script src="file://{%support%}/highlight.pack.js"></script>
     <script>
       $(document).ready(function() {
         $('code').unwrap().wrap('<pre></pre>');
+        $.each($('code'),function(i,v) {lines=$(v).text().split('\n');lang=lines[0];if(lang!="") {$(v).addClass(lang);$(v).text(lines.slice(1,lines.length).join('\n'));}});
         $('pre code').each(function(i, block) {
           hljs.highlightBlock(block);
         });
