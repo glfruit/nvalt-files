@@ -56,6 +56,10 @@ code {
 	background-color: rgba(255, 252, 249, 1);
 }
 
+.hljs-keyword {
+  color: rgba(235,124,110,1);
+}
+
 pre code {
   border-radius: 6px;
   padding: 20px;

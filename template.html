@@ -42,9 +42,16 @@
       </div>
     </div><!-- /.container -->
 
-<script src="file://{%support%}/bootstrap/js/jquery.min.js"></script>
-<script src="file://{%support%}/bootstrap/js/bootstrap.min.js"></script>
-  <script src="file://{%support%}/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+    <script src="file://{%support%}/bootstrap/js/jquery.min.js"></script>
+    <script src="file://{%support%}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="file://{%support%}/highlight.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('code').unwrap().wrap('<pre></pre>');
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
 </body>
 </html>
